@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keto Meal Plans</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Basic meal styling */
+    .meal {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .meal h2 {
+      margin-top: 0;
+    }
+    ul {
+      padding-left: 20px;
+    }
+
+    /* Section transitions */
+    .meal-section {
+      transition: opacity 0.4s ease-in-out;
+      opacity: 0;
+      display: none;
+    }
+    .meal-section.showing {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Container layout */
+    body {
+      background-color: #f8f9fa;
+      margin: 0;
+    }
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .sticky-top-menu {
+      z-index: 1030;
+    }
+    .content-area {
+      overflow-y: auto;
+      flex-grow: 1;
+      padding-top: 1rem;
+    }
+
+    /* Fancy heading style */
+    .btn-custom-drinks {
+      background-color: #8e44ad;
+      color: #fff;
+      border: none;
+    }
+    .btn-custom-drinks:hover {
+      background-color: #9b59b6;
+      color: #fff;
+    }
+    .flashy-heading {
+      color: #c0392b;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px #999;
+      background-color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-3">
+    <!-- Unified sticky menu container with two rows inside -->
+    <div class="bg-light shadow-sm sticky-top-menu p-3" style="border-radius: 8px;">
+      <!-- First row -->
+      <div class="row justify-content-center">
+        <div class="col-12 text-center mb-3">
+          <h2 class="flashy-heading">Keto-Friendly Meal Categories</h2>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-primary w-100" onclick="showSection('breakfast')">Breakfast</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-success w-100" onclick="showSection('lunch')">Lunch</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-danger w-100" onclick="showSection('dinner')">Dinner</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-warning w-100" onclick="showSection('dessert')">Dessert</button>
+        </div>
+      </div>
+
+      <!-- Second row -->
+      <div class="row justify-content-center">
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-secondary w-100" onclick="showSection('fastfood')">Fast Food</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-info w-100" onclick="showSection('foods')">Foods</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-dark w-100" onclick="showSection('restaurant')">Restaurant</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-custom-drinks w-100" onclick="showSection('drinks')">Drinks</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable content area -->
+    <div class="content-area px-3">
+      <!-- Original 4 sections -->
+      <div id="breakfast" class="meal-section" data-loaded="false">
+        <h2>Breakfast Meals</h2>
+        <p>Breakfast menu coming soon...</p>
+      </div>
+      <div id="lunch" class="meal-section" data-loaded="false">
+        <h2>Lunch Meals</h2>
+        <p>Lunch menu coming soon...</p>
+      </div>
+      <div id="dinner" class="meal-section" data-loaded="false">
+        <h2>Dinner Meals</h2>
+        <p>Dinner menu coming soon...</p>
+      </div>
+      <div id="dessert" class="meal-section" data-loaded="false">
+        <h2>Dessert Meals</h2>
+        <p>Dessert menu coming soon...</p>
+      </div>
+
+      <!-- 4 new sections -->
+      <div id="fastfood" class="meal-section" data-loaded="false">
+        <h2>Fastfood Meals</h2>
+        <p>Fastfood menu coming soon...</p>
+      </div>
+      <div id="foods" class="meal-section" data-loaded="false">
+        <h2>Foods</h2>
+        <p>Foods list coming soon...</p>
+      </div>
+      <div id="restaurant" class="meal-section" data-loaded="false">
+        <h2>Restaurant Meals</h2>
+        <p>Restaurant menu coming soon...</p>
+      </div>
+      <div id="drinks" class="meal-section" data-loaded="false">
+        <h2>Drinks</h2>
+        <p>Drinks menu coming soon...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.meal-section').forEach(sec => {
+        sec.classList.remove('showing');
+        sec.style.display = 'none';
+      });
+
+      // Show the requested section
+      const section = document.getElementById(sectionId);
+      section.style.display = 'block';
+      setTimeout(() => {
+        section.classList.add('showing');
+      }, 10);
+
+      // If we haven't loaded external content yet, fetch it
+      if (section.dataset.loaded === 'false') {
+        fetch(`menus/${sectionId}.html`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+          })
+          .then(html => {
+            section.innerHTML = html;
+            section.dataset.loaded = 'true';
+          })
+          .catch(error => {
+            section.innerHTML += `<p class=\"text-danger\">Failed to load ${sectionId} menu: ${error.message}</p>`;
+            console.error('Error loading section:', error);
+          });
+      }
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
