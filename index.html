@@ -6,6 +6,25 @@
   <title>Keto Meal Plans</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    /* Mobile-friendly smaller menu */
+    @media (max-width: 576px) {
+      /* Reduce padding around the menu container */
+      .sticky-top-menu {
+        padding: 0.5rem !important;
+      }
+      /* Shrink button padding & font size on mobile */
+      .sticky-top-menu .btn {
+        padding: 0.4rem 0.2rem;
+        font-size: 0.85rem;
+      }
+      /* Adjust heading if shown on mobile for any reason */
+      .flashy-heading {
+        font-size: 1.4rem;
+        text-shadow: none;
+        padding: 0.25rem 0.75rem;
+      }
+    }
+
     /* Basic meal styling */
     .meal {
       background-color: #fff;
@@ -80,7 +99,7 @@
       <!-- First row -->
       <div class="row justify-content-center">
         <div class="col-12 text-center mb-3">
-          <h2 class="flashy-heading">Keto-Friendly Meal Categories</h2>
+          <h2 class="flashy-heading d-none d-sm-block">Keto-Friendly Meal Categories</h2>
         </div>
         <div class="col-6 col-md-3 mb-3">
           <button class="btn btn-primary w-100" onclick="showSection('breakfast')">Breakfast</button>
