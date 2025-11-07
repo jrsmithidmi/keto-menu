@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arc Expedition Caravan - Complete Loot Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #00d9ff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+        
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            background: rgba(22, 33, 62, 0.8);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #00d9ff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2 {
+            color: #00d9ff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+        }
+        
+        h3 {
+            color: #4dd0e1;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        
+        h4 {
+            color: #80deea;
+            font-size: 1.1em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #00d9ff;
+            font-weight: bold;
+        }
+        
+        strong {
+            color: #ffd700;
+        }
+        
+        .tip-box {
+            background: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid #ffd700;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+        
+        .tip-box h3 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+        
+        .warning {
+            background: rgba(255, 107, 107, 0.1);
+            border-left: 4px solid #ff6b6b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .priority-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .priority-item {
+            background: rgba(0, 217, 255, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
+        
+        .nav {
+            background: rgba(22, 33, 62, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .nav-links a {
+            color: #00d9ff;
+            text-decoration: none;
+            padding: 8px 15px;
+            background: rgba(0, 217, 255, 0.1);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
+        
+        .nav-links a:hover {
+            background: rgba(0, 217, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .priority-items {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Arc Expedition Caravan</h1>
+            <p class="subtitle">Complete Loot Location Guide</p>
+        </header>
+        
+        <nav class="nav">
+            <div class="nav-links">
+                <a href="#industrial">Industrial</a>
+                <a href="#tech">Tech</a>
+                <a href="#humidifiers">Humidifiers</a>
+                <a href="#nature">Nature</a>
+                <a href="#medical">Medical</a>
+                <a href="#healing">Healing</a>
+                <a href="#money">Money</a>
+                <a href="#weapons">Weapons</a>
+                <a href="#tips">Pro Tips</a>
+            </div>
+        </nav>
+        
+        <div id="industrial" class="section">
+            <h2>⚙️ Industrial Items</h2>
+            <p><strong>Items:</strong> Rusted Gears, Motors, Light Bulbs, Mechanical Batteries</p>
+            
+            <h3>Route 1: Blue Gate Highway</h3>
+            <ul>
+                <li>Massive highway leading into tunnels (middle of map)</li>
+                <li>Flooded with cars, buses, and vehicles</li>
+                <li><strong>Drops:</strong> Motors (needed for Refiner Level 3), Light Bulbs, Rusted Gears</li>
+                <li>Follow road all the way into the tunnels</li>
+            </ul>
+            
+            <h3>Route 2: Buried City Car Park</h3>
+            <ul>
+                <li>Large concentration of vehicles</li>
+                <li><strong>Drops:</strong> Rusted Gears, Motors</li>
+            </ul>
+            
+            <h3>Route 3: Dam - Underground Primary Facility</h3>
+            <ul>
+                <li>Between Water Treatment and Control Tower</li>
+                <li>Shorter route but reliable</li>
+                <li><strong>Drops:</strong> Rusted Gears, Mechanical Batteries</li>
+            </ul>
+        </div>
+        
+        <div id="tech" class="section">
+            <h2>💻 Tech Items</h2>
+            <p><strong>Items:</strong> Cooling Fans, Sensors</p>
+            
+            <h3>Small Building near Water Treatment (Dam)</h3>
+            <ul>
+                <li>Contains utility boxes</li>
+                <li><strong>Drops:</strong> Sensors, Cooling Fans (needed for Expedition Project)</li>
+            </ul>
+            
+            <h3>Research Building (Dam)</h3>
+            <ul>
+                <li>Multiple utility boxes</li>
+                <li><strong>Drops:</strong> Sensors, Cooling Fans</li>
+            </ul>
+            
+            <h3>Power Complex (Dam)</h3>
+            <ul>
+                <li>Described as "chill run"</li>
+                <li><strong>Drops:</strong> Tech components</li>
+            </ul>
+        </div>
+        
+        <div id="humidifiers" class="section">
+            <h2>💧 Humidifiers</h2>
+            <p><strong>Required for:</strong> Stage 4 Expedition Caravan</p>
+            
+            <h3>Buried City - Red Tower (Best Spot - Guaranteed Spawn)</h3>
+            <ul>
+                <li>Top floor, two lockers</li>
+                <li>One locker always has a humidifier</li>
+            </ul>
+            
+            <h3>Santa Maria House (Buried City)</h3>
+            <ul>
+                <li>Enter from roof hatch</li>
+                <li>Frequently spawns humidifiers</li>
+            </ul>
+            
+            <h3>General Buried City</h3>
+            <ul>
+                <li>Random buildings and streets throughout the area</li>
+            </ul>
+        </div>
+        
+        <div id="nature" class="section">
+            <h2>🌿 Nature Items</h2>
+            
+            <h3>Apricots and Lemons (spawn in every map)</h3>
+            <ul>
+                <li><strong>Dam:</strong> Islands in the Red Lakes</li>
+                <li><strong>Buried City:</strong> Morirano Park</li>
+                <li><strong>Spaceport:</strong> Staff Parking area</li>
+                <li><strong>Blue Gate:</strong> Olive Grove (large quantity)</li>
+            </ul>
+            
+            <h3>Prickly Pears</h3>
+            <ul>
+                <li><strong>Spaceport:</strong> Outskirts area (look for cactus clusters)</li>
+                <li><strong>Buried City:</strong> Outskirts area (look for cactus clusters)</li>
+            </ul>
+            
+            <h3>Olives</h3>
+            <ul>
+                <li><strong>Blue Gate:</strong> Olive Grove</li>
+            </ul>
+            
+            <h3>Mushrooms</h3>
+            <ul>
+                <li><strong>Spaceport:</strong> Near little hangar on a specific tree (100% spawn)</li>
+                <li><strong>Dam:</strong> Hallway near Water Treatment (100% spawn)</li>
+                <li><strong>Dam:</strong> Throughout the swamps near trees</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h3>🎯 Best Method: Lush Blooms Events</h3>
+                <p>Baskets spawn with stacks of up to 5 fruits!</p>
+                <ul>
+                    <li><strong>Buried City - Morirano Park:</strong> 3 known basket spawn locations</li>
+                    <li><strong>Dam:</strong> 6 basket locations (according to online map)</li>
+                    <li><strong>Strategy:</strong> Hit baskets and extract quickly for 3-4 efficient runs</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="medical" class="section">
+            <h2>🏥 Medical Items</h2>
+            <p><strong>Items:</strong> Laboratory Reagents, Bioscanners, Medical Kits</p>
+            
+            <h3>Buried City Hospital</h3>
+            <ul>
+                <li>Main location but heavily contested</li>
+                <li><strong>Drops:</strong> Cracked Bioscanners, Rusted Shut Medical Kits, Laboratory Reagents</li>
+            </ul>
+            
+            <h3>Testing Annex (Dam)</h3>
+            <ul>
+                <li>Quieter alternative to hospital</li>
+                <li>Less loot but less competition</li>
+                <li><strong>Drops:</strong> Same medical items as hospital</li>
+            </ul>
+        </div>
+        
+        <div id="healing" class="section">
+            <h2>❤️ Healing Items</h2>
+            
+            <h3>Bandages</h3>
+            
+            <h4>Galleria (Buried City)</h4>
+            <ul>
+                <li>40-50 Great Mullen plants</li>
+                <li>Also counts for Harvesting Trail achievement</li>
+            </ul>
+            
+            <h4>Hospital next to Galleria</h4>
+            <ul>
+                <li><strong>Drops:</strong> Fabric, Durable Cloth</li>
+                <li><strong>Crafting:</strong> Fabric → Durable Cloth → Combine with Great Mullen = Herbal Bandages</li>
+            </ul>
+            
+            <h3>Shield Charges/Power Cells</h3>
+            
+            <h4>Husk Events (Dam)</h4>
+            <ul>
+                <li>Battlegrounds area when event is active</li>
+                <li>Search destroyed husks</li>
+                <li><strong>Drops:</strong> Power Cells</li>
+            </ul>
+            <div class="warning">
+                <strong>⚠️ Warning:</strong> High PvP activity in this area
+            </div>
+            
+            <h4>Bastions and Bombarders (Farming Method)</h4>
+            <ul>
+                <li><strong>Drops:</strong> Power Cells, Advanced Dark Power Cells (recycle into 2 normal cells)</li>
+                <li>Purple cells sell for 5k each</li>
+                <li>Good for both shields and money</li>
+            </ul>
+        </div>
+        
+        <div id="money" class="section">
+            <h2>💰 Money Farming Locations</h2>
+            
+            <h3>Spaceport - Departure Building</h3>
+            <ul>
+                <li>Room full of red lockers (rarely visited)</li>
+                <li>Check when nearby</li>
+            </ul>
+            
+            <h3>Dam - Research Building</h3>
+            <ul>
+                <li>Best at nighttime</li>
+                <li>Tons of desks and lockers</li>
+            </ul>
+            
+            <h3>Blue Gate Secret Tunnels</h3>
+            <div class="warning">
+                <strong>❌ Not recommended:</strong> Too well-known, high PvP activity
+            </div>
+            
+            <h3>Key Rooms (All Maps)</h3>
+            <ul>
+                <li>Always worth it, especially at nighttime</li>
+                <li>Good loot even in common key rooms</li>
+            </ul>
+            
+            <h3>Late Game: Bombarder Spotters</h3>
+            <ul>
+                <li>Kill spotters near where Bombarders patrol</li>
+                <li>Each relay sells for ~5k</li>
+                <li>Spotters respawn</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>📜 Blueprints</h2>
+            <p><strong>No specific farming location</strong> - spawn everywhere:</p>
+            <ul>
+                <li>Caches</li>
+                <li>Desks</li>
+                <li>Lockers</li>
+                <li>Car hoods (especially on Blue Gate car route)</li>
+            </ul>
+        </div>
+        
+        <div id="weapons" class="section">
+            <h2>🔫 Weapons</h2>
+            
+            <h3>Locked Rooms (All Maps)</h3>
+            <ul>
+                <li>Best at nighttime (better loot)</li>
+                <li>Often contain purple weapons</li>
+            </ul>
+            
+            <h3>PvP</h3>
+            <ul>
+                <li>High risk method</li>
+                <li>Recommended in squads rather than solo</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>⭐ Always Pick Up (Priority Items)</h2>
+            <div class="priority-items">
+                <div class="priority-item">Springs</div>
+                <div class="priority-item">Sensors</div>
+                <div class="priority-item">Mechanical Components</div>
+                <div class="priority-item">Electrical Components</div>
+                <div class="priority-item">Magnets</div>
+                <div class="priority-item">Gun Parts</div>
+                <div class="priority-item">Durable Cloth</div>
+                <div class="priority-item">Arc Circuitry</div>
+                <div class="priority-item">Power Cells</div>
+                <div class="priority-item">Seeds ⭐</div>
+            </div>
+            <p style="margin-top: 15px;"><strong>Seeds are especially valuable:</strong> Stack to 100, convert to basic resources through Celeste</p>
+        </div>
+        
+        <div id="tips" class="tip-box">
+            <h3>💡 Pro Tips</h3>
+            <ul>
+                <li>Night runs generally have better loot</li>
+                <li>Solo lobbies are less competitive</li>
+                <li>During Lush Blooms events, prioritize basket farming for all nature items</li>
+                <li>Herbal Bandages are sufficient (Sterilized Bandages require too many resources)</li>
+                <li>Queen raid solo is not recommended (high risk, low reward, high ammo cost)</li>
+                <li>Always check car hoods on Blue Gate route for blueprints</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
