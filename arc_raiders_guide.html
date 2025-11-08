@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC Raiders - The Definitive Complete Guide</title>
+    <title>ARC Raiders - The Definitive Guide</title>
     <style>
         * {
             margin: 0;
@@ -58,7 +58,7 @@
         }
 
         .nav-header {
-            display: none;
+            display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0;
@@ -86,11 +86,17 @@
         }
 
         nav ul {
+            display: none;
             list-style: none;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        nav ul.show {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
         }
 
         nav a {
@@ -98,16 +104,19 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            padding: 8px 14px;
+            padding: 12px 15px;
             border-radius: 5px;
-            font-size: 0.9em;
+            font-size: 1em;
             display: block;
-            text-align: center;
+            text-align: left;
+            background: rgba(15, 52, 96, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.2);
         }
 
         nav a:hover {
             background: rgba(0, 212, 255, 0.2);
             color: #fff;
+            border-color: #00d4ff;
         }
 
         section {
@@ -393,34 +402,6 @@
                 font-size: 1.6em;
             }
 
-            nav {
-                padding: 10px;
-            }
-
-            .nav-header {
-                display: flex;
-            }
-
-            nav ul {
-                display: none;
-                flex-direction: column;
-                gap: 5px;
-                margin-top: 15px;
-                padding-top: 15px;
-                border-top: 1px solid rgba(0, 212, 255, 0.3);
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            nav a {
-                padding: 12px 15px;
-                font-size: 1em;
-                background: rgba(15, 52, 96, 0.5);
-                border: 1px solid rgba(0, 212, 255, 0.2);
-            }
-
             section {
                 padding: 20px;
             }
@@ -452,29 +433,24 @@
             navMenu.classList.toggle('show');
         }
 
-        // Close menu when clicking a link on mobile
+        // Close menu when clicking a link (both mobile and desktop)
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('nav a');
             const navMenu = document.getElementById('navMenu');
             
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
-                    // Only close on mobile
-                    if (window.innerWidth <= 768) {
-                        navMenu.classList.remove('show');
-                    }
+                    // Close menu when clicking any link
+                    navMenu.classList.remove('show');
                 });
             });
 
-            // Close menu when clicking outside on mobile
+            // Close menu when clicking outside
             document.addEventListener('click', function(event) {
-                if (window.innerWidth <= 768) {
-                    const nav = document.querySelector('nav');
-                    const navToggle = document.querySelector('.nav-toggle');
-                    
-                    if (!nav.contains(event.target)) {
-                        navMenu.classList.remove('show');
-                    }
+                const nav = document.querySelector('nav');
+                
+                if (!nav.contains(event.target)) {
+                    navMenu.classList.remove('show');
                 }
             });
         });
@@ -483,7 +459,7 @@
 <body>
     <header>
         <h1>⚡ ARC RAIDERS ⚡</h1>
-        <p class="subtitle">The Definitive Complete Guide - Everything You Need to Dominate</p>
+        <p class="subtitle">The Definitive Guide - Everything You Need to Dominate</p>
     </header>
 
     <div class="container">
@@ -508,16 +484,42 @@
                 <li><a href="#trials">Trials</a></li>
             </ul>
         </nav>
-				
-        <div class="info-box" style="text-align: center;">
-            <strong>🔗 Community Resources:</strong><br>
-            <a href="https://arctracker.io/" target="_blank" style="color: #00d4ff;">ARCTracker.io</a> | 
-            <a href="https://ardb.app/" target="_blank" style="color: #00d4ff;">ARDB.app</a> | 
-            <a href="https://arc-raiders.fandom.com/" target="_blank" style="color: #00d4ff;">Arc Raiders Wiki</a> | 
-            <a href="https://metaforge.app/arc-raiders/" target="_blank" style="color: #00d4ff;">Arc Raiders MetaForge</a>
-        </div>
+
+        <section id="maps" style="background: rgba(0, 212, 255, 0.1); border-left: 5px solid #00d4ff;">
+            <h2>🗺️ Interactive Maps</h2>
+            <div class="info-box" style="text-align: center;">
+                <strong>Explore detailed interactive maps for each location:</strong><br><br>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="https://metaforge.app/arc-raiders/map/dam" target="_blank" style="color: #00d4ff; padding: 15px; background: rgba(15, 52, 96, 0.5); border: 2px solid #3498db; border-radius: 8px; text-decoration: none; display: block; transition: all 0.3s ease;">
+                        <span class="map-icon map-dam">DAM</span><br>
+                        <span style="font-size: 0.9em;">View Dam Map</span>
+                    </a>
+                    <a href="https://metaforge.app/arc-raiders/map/spaceport" target="_blank" style="color: #00d4ff; padding: 15px; background: rgba(15, 52, 96, 0.5); border: 2px solid #9b59b6; border-radius: 8px; text-decoration: none; display: block; transition: all 0.3s ease;">
+                        <span class="map-icon map-spaceport">SPACEPORT</span><br>
+                        <span style="font-size: 0.9em;">View Spaceport Map</span>
+                    </a>
+                    <a href="https://metaforge.app/arc-raiders/map/buried-city" target="_blank" style="color: #00d4ff; padding: 15px; background: rgba(15, 52, 96, 0.5); border: 2px solid #e67e22; border-radius: 8px; text-decoration: none; display: block; transition: all 0.3s ease;">
+                        <span class="map-icon map-buried">BURIED CITY</span><br>
+                        <span style="font-size: 0.9em;">View Buried City Map</span>
+                    </a>
+                    <a href="https://metaforge.app/arc-raiders/map/blue-gate" target="_blank" style="color: #00d4ff; padding: 15px; background: rgba(15, 52, 96, 0.5); border: 2px solid #1abc9c; border-radius: 8px; text-decoration: none; display: block; transition: all 0.3s ease;">
+                        <span class="map-icon map-bluegate">BLUE GATE</span><br>
+                        <span style="font-size: 0.9em;">View Blue Gate Map</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <section id="track-system">
+				
+			<div class="info-box" style="text-align: center;">
+				<strong>🔗 Community Resources:</strong><br>
+				<a href="https://arctracker.io/" target="_blank" style="color: #00d4ff;">ARCTracker.io</a> | 
+				<a href="https://ardb.app/" target="_blank" style="color: #00d4ff;">ARDB.app</a> | 
+				<a href="https://arc-raiders.fandom.com/" target="_blank" style="color: #00d4ff;">Arc Raiders Wiki</a> | 
+				<a href="https://metaforge.app/arc-raiders/" target="_blank" style="color: #00d4ff;">Arc Raiders MetaForge</a>
+			</div>
+		
             <h2>👁️ The Track Resources System - Your #1 Tool</h2>
 
             <div class="critical-box">
@@ -1656,8 +1658,16 @@
             </div>
         </section>
 
+        <div class="info-box" style="text-align: center;">
+            <strong>🔗 Community Resources:</strong><br>
+            <a href="https://arctracker.io/" target="_blank" style="color: #00d4ff;">ARCTracker.io</a> | 
+            <a href="https://ardb.app/" target="_blank" style="color: #00d4ff;">ARDB.app</a> | 
+            <a href="https://arc-raiders.fandom.com/" target="_blank" style="color: #00d4ff;">Arc Raiders Wiki</a> | 
+            <a href="https://metaforge.app/arc-raiders/" target="_blank" style="color: #00d4ff;">Arc Raiders MetaForge</a>
+        </div>
+
         <footer>
-            <p><strong>⚡ ARC RAIDERS - The Definitive Complete Guide ⚡</strong></p>
+            <p><strong>⚡ ARC RAIDERS - The Definitive Guide ⚡</strong></p>
             <p>Stay Positive, Stay Disciplined - Master the Rust Belt!</p>
             <p style="margin-top: 10px; font-size: 0.9em;">Compiled from official sources, community guides, gameplay testing, and farming route discoveries</p>
         </footer>
